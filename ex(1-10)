@@ -1,0 +1,9 @@
+function missedAngle( x, y){
+  return 180 - x - y;
+}
+
+
+console.log("The answer is ", missedAngle(45, 90));
+console.log("The answer is ", missedAngle(30, 30));
+console.log("The answer is ", missedAngle(75, 25));
+
