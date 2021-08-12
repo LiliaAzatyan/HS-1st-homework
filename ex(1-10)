@@ -1,3 +1,4 @@
+/* 1 */
 function missedAngle( x, y){
   return 180 - x - y;
 }
@@ -6,4 +7,237 @@ function missedAngle( x, y){
 console.log("The answer is ", missedAngle(45, 90));
 console.log("The answer is ", missedAngle(30, 30));
 console.log("The answer is ", missedAngle(75, 25));
+
+
+/* 2 */
+function digitNumber(n){
+  if(n > 0 && n < 10){
+    var dNum1 = n * 10 + n;
+    var dNum2 = n * 100 + dNum1;
+  }
+  else if(n >= 10 && n <100){
+    var dNum1 = n * 100 + n;
+    var dNum2 = n * 10000 + dNum1;
+  }
+  else if(n >= 100){
+    var dNum1 = n * 1000 + n;
+    var dNum2 = n * 1000000 + dNum1;
+  }
+  
+  
+  return n + dNum1 + dNum2;
+}
+
+console.log("The result is: ", digitNumber(3));
+console.log("The result is: ", digitNumber(17));
+console.log("The result is: ", digitNumber(100));
+
+
+/* 3 */
+function LastDigit(n){
+  if(n % 10 == 0){
+    return n;
+  }
+  else{
+    if(n > 0 && n < 10){
+      return n;
+    }
+    else if(n > 10  && n < 100){
+      a = n % 10;
+      n /= 10;
+      n = a * 10 + n;
+      return n;
+    }
+    else if(n > 100 && n < 1000){
+      a = n % 10;
+      b = n / 10;
+      c = a * 100 + b;
+      return c;
+    }
+    else if(n > 1000 && n < 10000){
+      a = n % 10;
+      b = n / 10;
+      c = a * 1000 + b;
+      return c;
+    }
+    
+  }
+  
+}
+console.log(LastDigit(367));
+console.log(LastDigit(1002));
+console.log(LastDigit(250));
+console.log(LastDigit(8));
+
+
+/* 4 */
+
+function Average(a, b, c, d, e){
+  var a, b, c, d, e;
+  return (a + b + c + d + e) / 5;
+}
+console.log(Average(45, -12, 0, 3, -15));
+console.log(Average(7, 52, -23, 9, -81));
+
+/* 5 */
+
+function Divisible(n){
+  if(n % 3 == 0 && n % 5 != 0 && n % 7 != 0){
+    console.log("The number is divisible only by  3");
+  }
+  else if(n % 3 != 0 && n % 5 == 0 && n % 7 != 0){
+    console.log("The number is divisible only by  5");
+  }
+  else if(n % 3 != 0 && n % 5 != 0 && n % 7 == 0){
+    console.log("The number is divisible only by  7");
+  }
+  else if(n % 3 == 0 && n % 5 == 0 && n % 7 != 0){
+    console.log("The number is divisible by 3 and 5");
+  }
+  else if(n % 3 == 0 && n % 5 != 0 && n % 7 == 0){
+    console.log("The number is divisible by  3 and 7");
+  }
+  else if(n % 3 != 0 && n % 5 == 0 && n % 7 == 0){
+    console.log("The number is divisible by 5 and 7");
+  }
+  else if(n % 3 == 0 && n % 5 == 0 && n % 7 == 0){
+    console.log("The number is divisible by 3 and 5 and 7");
+  }
+  else{
+    console.log("The number is not divisible by neither 3, 5 nor 7");
+  }
+}
+Divisible(21);
+Divisible(35);
+Divisible(13);
+Divisible(420);
+
+
+/* 6 */
+function Year(n){
+  if(n >= 1 && n <= 2){
+    console.log("Toddler");
+  }
+  else if(n >= 3 && n <= 12){
+    console.log("Child");
+  }
+  else if(n >= 13 && n <= 17){
+    console.log("Teenager");
+  }
+  else{
+    console.log("Adult");
+  }
+}
+var age = "year";
+switch(age){
+  case "month":
+    console.log("Baby");
+    break;
+  case "year":
+    Year(45);
+    Year(3);
+    Year(16);
+    break;
+  default:
+    console.log("No age entered!!");
+}
+ 
+/* 7 */
+var a = -23;
+var b = -456;
+var c = 0;
+
+  if(a < b && a < c){
+    if(b < c){
+      console.log(a, b, c);
+    }
+    else{
+      console.log(a, c, b);
+    }
+  }
+  if(b < a && b < c){
+    if(a < c){
+      console.log(b, a, c);
+    }
+    else{
+      console.log(b, c, a);
+    }
+  }
+  if(c < a && c < b){
+    if(a < b){
+      console.log(c, a, b);
+    }
+    else{
+      console.log(c, b, a);
+    }
+  }
+
+/* 8 */
+
+ let grade1 = 20;
+let grade2 = 40;
+let grade3 = 40;
+if(grade1 >= 40 && grade2 >= 40 && grade3 >= 40){
+  console.log("The student has passed all the exams.");
+}
+else if((grade1 + grade2 + grade3) / 3 >= 50){
+  console.log("The student has passed the exams.");
+}
+else{
+  console.log("The student has failed some of the exams.");
+}
+
+/* 9 */
+function TheSign(a, b, c){
+  if((a < 0 && b > 0 && c > 0) || (a > 0 && b < 0 && c >0)
+  || (a > 0 && b > 0 && c < 0)){
+    console.log("It's a negative number.");
+  }
+  else if(a == 0 || b == 0 || c == 0){
+    console.log("Neither negative nor pozitive. Zero.");
+  }
+  else{
+    console.log("It's a positive number.");
+  }
+}
+TheSign(-14, 5, 0);
+TheSign(-8, 9, -6);
+TheSign(4, 19, -2);
+
+/* 10 */
+let shape = "rectangle";
+function AreaOfTriangle(a, b){
+  if(a == 0 || b == 0){
+    return 0;
+  }else{
+    return a * b / 2;
+  }
+}
+function AreaOfRectangle(a, b){
+  if(a == 0 || b == 0){
+    return 0;
+  }else{
+    return a * b;
+  }
+}
+switch(shape){
+  case "rectangle":
+    console.log(AreaOfRectangle(8, 5));
+    break;
+  case "triangle":
+    console.log(AreaOfTriangle(6, 7));
+    console.log(AreaOfTriangle(0, 5));
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
